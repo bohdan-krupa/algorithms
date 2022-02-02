@@ -9,7 +9,9 @@ def getTime(word: str) -> int:
 
     for letter in word.upper():
         letter_position = eng_alphabet.index(letter)
-        step = min(abs(letter_position - position), abs(abs(letter_position - position) - 26))
+
+        gap = abs(letter_position - position)
+        step = min(gap, abs(gap - 26))
 
         position = letter_position
         time += step
